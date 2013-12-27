@@ -407,3 +407,11 @@ output: index.html
 --
 
 <h1 style="font-size:72px">Thanks for listening</h1>
+
+<br />
+<div align="center">
+<img width="100" src="./img/by-sa.png" />
+</div>
+<h2 style="font-size: 18px">
+本投影片採用<a href="http://creativecommons.org/licenses/by-sa/3.0/tw/" target="_blank">創用 CC「姓名標示—相同方式分享 3.0 台灣」授權條款</a>
+</h2>
