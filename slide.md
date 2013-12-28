@@ -62,6 +62,19 @@ output: index.html
 
 --
 
+### 特別感謝
+<br />
+<br />
+<h2 style="font-size: 60px">
+	Oases Ong<br />
+</h2>
+<br />
+<h2>
+	本簡報題目來自於 Oases Ong 論文訪談問卷
+</h2>
+
+--
+
 # 軟體工程？
 
 --
