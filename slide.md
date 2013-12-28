@@ -382,6 +382,7 @@ output: index.html
 --
 
 <br />
+<br />
 <h2 style="font-size: 75px">
 	Travis
 </h2>
@@ -389,8 +390,6 @@ output: index.html
 	<a href="https://github.com/denny0223/TOSW-test/blob/master/.travis.yml" target="_blank">.travis.yml</a> /
 	<a href="https://travis-ci.org/denny0223/TOSW-test" target="_blank">result</a>
 </h2>
-
---
 
 --
 
