@@ -1,6 +1,5 @@
 title: 從軟體工程角度反思自由軟體開發
 output: index.html
-
 --
 
 <h1 style="font-size: 72px">
@@ -396,6 +395,12 @@ output: index.html
 ### Jenkins
 <div align="center">
 	<img src="./img/jenkins.png" width="800"/>
+</div>
+
+--
+
+<div align="center">
+  <img style="width:800px" src="./img/ci.png" />
 </div>
 
 --
