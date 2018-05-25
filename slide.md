@@ -20,17 +20,19 @@ output: index.html
   <b>Denny Huang</b>
 </h2>
 
+* 雷亞遊戲 Rayark Inc.
+
 * SITCON 2013, 2014 總召
 
-* <a href="http://about.me/denny0223" target="_blank">About me</a>
+* <a href="https://denny.one/" target="_blank">About me</a>
 
 --
 
 ### 開發經驗
 
-* Java, C, PHP
+* Python, Java...
 
-* Bash shell
+* Shell Script
 
 * Android
 
@@ -214,8 +216,7 @@ output: index.html
 * 以傳統軟體工程的觀點，分析使用者的工作流程、習慣，整理成圖表，才能逐一地找出使用者的需求。<br />
 所以，像OSS這樣無嚴謹化的需求分析真的能找出使用者的需求嗎？你的看法是甚麼？
 
-	* [Feedly](http://feedly.uservoice.com/)
-		* [成功案例](http://feedly.uservoice.com/forums/192636-suggestions/suggestions/3756882-export-my-rss-data-from-feedly)
+* https://github.com/MongoEngine/mongoengine/issues/858
 
 --
 
@@ -225,14 +226,13 @@ output: index.html
 
 --
 
-* GitHub
-
-* [SITCON](http://staff.sitcon.org)
-	* [repo](https://github.com/sitcon-tw/staff.sitcon.org)
-
-* [Redmine](http://redmine.org)
+* [GitHub](https://github.com/)
 
 * [GitLab](http://gitlab.org/)
+
+* [Gogs](https://gogs.io/)
+
+* [Redmine](http://redmine.org)
 
 * [Phabricator](http://phabricator.org/)
 
@@ -292,7 +292,7 @@ output: index.html
 	<a href="https://github.com/denny0223/TOSW-test/issues" target="_blank">Demo</a>
 </h1>
 <h2>
-	sample: <a href="https://github.com/rogerwang/node-webkit/issue" target="_blank">node-webkit</a>
+	sample: <a href="https://github.com/nwjs/nw.js/issues" target="_blank">nw.js</a>
 </h2>
 
 --
@@ -315,7 +315,7 @@ output: index.html
 --
 
 # Wiki
-## [Demo](https://github.com/denny0223/TOSW-test/wiki) / sample: [node-webkit](https://github.com/rogerwang/node-webkit/wiki)
+## [Demo](https://github.com/denny0223/TOSW-test/wiki) / sample: [node-webkit](https://github.com/nwjs/nw.js/wiki)
 
 --
 

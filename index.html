@@ -8,21 +8,23 @@
     body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #222;
-  background-color: #f7f7f7;
   font-size: 100%;
 }
 
-#wrapper {
-  width: 850px;
+.slide {
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 0; right: 0;
+  background-color: #f7f7f7;
+}
+
+.slide-content {
+  width: 800px;
   height: 600px;
   overflow: hidden;
   margin: 80px auto 0 auto;
-}
-
-.slide {
-  width: auto;
-  height: 540px;
   padding: 30px;
+
   font-weight: 200;
   font-size: 200%;
   line-height: 1.375;
@@ -34,7 +36,7 @@
   left: 20px;
 }
 
-.controls .arrow {
+.arrow {
   width: 0; height: 0;
   border: 30px solid #333;
   float: left;
@@ -48,7 +50,7 @@
   user-select: none;
 }
 
-.controls .prev {
+.prev {
   border-top-color: transparent;
   border-bottom-color: transparent;
   border-left-color: transparent;
@@ -57,7 +59,7 @@
   border-right-width: 50px;
 }
 
-.controls .next {
+.next {
   border-top-color: transparent;
   border-bottom-color: transparent;
   border-right-color: transparent;
@@ -66,24 +68,24 @@
   border-right-width: 0;
 }
 
-.controls .prev:hover {
+.prev:hover {
   border-right-color: #888;
   cursor: pointer;
 }
 
-.controls .next:hover {
+.next:hover {
   border-left-color: #888;
   cursor: pointer;
 }
 
-.slide h1 {
+h1 {
   font-size: 300%;
   line-height: 1.2;
   text-align: center;
   margin: 170px 0 0;
 }
 
-.slide h2 {
+h2 {
   font-size: 100%;
   line-height: 1.2;
   margin: 5px 0;
@@ -91,7 +93,7 @@
   font-weight: 200;
 }
 
-.slide h3 {
+h3 {
   font-size: 140%;
   line-height: 1.2;
   border-bottom: 1px solid #aaa;
@@ -99,20 +101,20 @@
   padding-bottom: 15px;
 }
 
-.slide ul {
+ul {
   padding: 20px 0 0 60px;
   font-weight: 200;
   line-height: 1.375;
 }
 
-.slide .author h1.name {
+.author h1 {
   font-size: 170%;
   font-weight: 200;
   text-align: center;
   margin-bottom: 30px;
 }
 
-.slide .author h3 {
+.author h3 {
   font-weight: 100;
   text-align: center;
   font-size: 95%;
@@ -137,6 +139,7 @@ pre {
   position: fixed;
   top: 0; left: 0; right: 0;
   height: 3px;
+  z-index: 1;
 }
 
 .progress-bar {
@@ -144,34 +147,39 @@ pre {
   height: 3px;
   background-color: #b4b4b4;
 
-  -webkit-transition: width 0.1s ease-out;
-  -moz-transition: width 0.1s ease-out;
-  -o-transition: width 0.1s ease-out;
-  transition: width 0.1s ease-out;
+  -webkit-transition: width 0.05s ease-out;
+  -moz-transition: width 0.05s ease-out;
+  -o-transition: width 0.05s ease-out;
+  transition: width 0.05s ease-out;
+}
+
+.hidden {
+  display: none;
 }
 
 @media (max-width: 850px) {
-  #wrapper {
-    width: auto;
-  }
 
   body {
     font-size: 70%;
+  }
+
+  .slide-content {
+    width: auto;
   }
 
   img {
     width: 100%;
   }
 
-  .slide h1 {
+  h1 {
     margin-top: 120px;
   }
 
-  .controls .prev, .controls .prev:hover {
+  .prev, .prev:hover {
     border-right-color: rgba(135, 135, 135, 0.5);
   }
 
-  .controls .next, .controls .next:hover {
+  .next, .next:hover {
     border-left-color: rgba(135, 135, 135, 0.5);
   }
 }
@@ -182,21 +190,17 @@ pre {
     overflow: hidden;
   }
 
-  #wrapper {
+  .slide-content {
+    padding: 10px;
     margin-top: 10px;
     height: 340px;
   }
 
-  .slide {
-    padding: 10px;
-    height: 340px;
-  }
-
-  .slide h1 {
+  h1 {
     margin-top: 50px;
   }
 
-  .slide ul {
+  ul {
     padding-left: 25px;
   }
 }
@@ -208,6 +212,10 @@ pre {
 
   @page {
     size: letter;
+  }
+
+  .hidden {
+    display: inline;
   }
 
   html {
@@ -230,205 +238,164 @@ pre {
     display: none;
   }
 
-  #wrapper {
-    overflow: visible;
-    height: 100%;
-    margin-top: 0;
+  .slide {
+    position: static;
   }
 
-  .slide {
+  .slide-content {
     border: 1px solid #222;
+    margin-top: 0;
     margin-bottom: 40px;
     height: 3.5in;
+    overflow: visible;
   }
 
-  .slide:nth-child(odd) {
+  .slide:nth-child(even) {
     /* 2 slides per page */
     page-break-before: always;
   }
 }
 
 /*
+
 github.com style (c) Vasily Polovnyov <vast@whiteants.net>
+
 */
 
-code, pre {
-  border: 1px solid #ddd;
-  border-radius: 3px;
-  overflow: auto;
-  padding: 6px 10px;
-}
-
-code {
-  padding: 0 5px;
-}
-
-pre>code {
-  margin: 0; padding: 0;
-  border: none;
-  background: transparent;
-}
-
-pre .comment,
-pre .template_comment,
-pre .diff .header,
-pre .javadoc {
-  color: #998;
-  font-style: italic
-}
-
-pre .keyword,
-pre .css .rule .keyword,
-pre .winutils,
-pre .javascript .title,
-pre .nginx .title,
-pre .subst,
-pre .request,
-pre .status {
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
   color: #333;
-  font-weight: bold
+  background: #f8f8f8;
 }
 
-pre .number,
-pre .hexcolor,
-pre .ruby .constant {
-  color: #099;
+.hljs-comment,
+.hljs-quote {
+  color: #998;
+  font-style: italic;
 }
 
-pre .string,
-pre .tag .value,
-pre .phpdoc,
-pre .tex .formula {
-  color: #d14
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-subst {
+  color: #333;
+  font-weight: bold;
 }
 
-pre .title,
-pre .id {
+.hljs-number,
+.hljs-literal,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag .hljs-attr {
+  color: #008080;
+}
+
+.hljs-string,
+.hljs-doctag {
+  color: #d14;
+}
+
+.hljs-title,
+.hljs-section,
+.hljs-selector-id {
   color: #900;
-  font-weight: bold
+  font-weight: bold;
 }
 
-pre .javascript .title,
-pre .lisp .title,
-pre .clojure .title,
-pre .subst {
-  font-weight: normal
+.hljs-subst {
+  font-weight: normal;
 }
 
-pre .class .title,
-pre .haskell .type,
-pre .vhdl .literal,
-pre .tex .command {
+.hljs-type,
+.hljs-class .hljs-title {
   color: #458;
-  font-weight: bold
+  font-weight: bold;
 }
 
-pre .tag,
-pre .tag .title,
-pre .rules .property,
-pre .django .tag .keyword {
+.hljs-tag,
+.hljs-name,
+.hljs-attribute {
   color: #000080;
-  font-weight: normal
+  font-weight: normal;
 }
 
-pre .attribute,
-pre .variable,
-pre .lisp .body {
-  color: #008080
+.hljs-regexp,
+.hljs-link {
+  color: #009926;
 }
 
-pre .regexp {
-  color: #009926
+.hljs-symbol,
+.hljs-bullet {
+  color: #990073;
 }
 
-pre .class {
-  color: #458;
-  font-weight: bold
+.hljs-built_in,
+.hljs-builtin-name {
+  color: #0086b3;
 }
 
-pre .symbol,
-pre .ruby .symbol .string,
-pre .lisp .keyword,
-pre .tex .special,
-pre .prompt {
-  color: #990073
-}
-
-pre .built_in,
-pre .lisp .title,
-pre .clojure .built_in {
-  color: #0086b3
-}
-
-pre .preprocessor,
-pre .pi,
-pre .doctype,
-pre .shebang,
-pre .cdata {
+.hljs-meta {
   color: #999;
-  font-weight: bold
+  font-weight: bold;
 }
 
-pre .deletion {
-  background: #fdd
+.hljs-deletion {
+  background: #fdd;
 }
 
-pre .addition {
-  background: #dfd
+.hljs-addition {
+  background: #dfd;
 }
 
-pre .diff .change {
-  background: #0086b3
+.hljs-emphasis {
+  font-style: italic;
 }
 
-pre .chunk {
-  color: #aaa
+.hljs-strong {
+  font-weight: bold;
 }
 
 
   </style>
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-39377010-4', 'denny0223.github.io');
-    ga('send', 'pageview');
-
-  </script>
 </head>
 <body>
     <div class="progress">
     <div class="progress-bar"></div>
   </div>
 
-<div id="wrapper">
-    <section class="slide"><p><h1 style="font-size: 72px">
+  <div class="slide" id="slide-1">
+    <section class="slide-content"><p><h1 style="font-size: 72px">
   從軟體工程角度<br />
   反思自由軟體開發
 </h1>
 <br /></p>
 <h2 id="denny-huang">Denny Huang</h2>
 </section>
-    <section class="slide"><h3 id="who-am-i-">Who am I ?</h3>
+  </div>
+  <div class="slide hidden" id="slide-2">
+    <section class="slide-content"><h3 id="who-am-i-">Who am I ?</h3>
 <p><br /></p>
 <h2 style="font-size: 60px">
   <b>Denny Huang</b>
 </h2>
 
 <ul>
+<li><p>雷亞遊戲 Rayark Inc.</p>
+</li>
 <li><p>SITCON 2013, 2014 總召</p>
 </li>
-<li><p><a href="http://about.me/denny0223" target="_blank">About me</a></p>
+<li><p><a href="https://denny.one/" target="_blank">About me</a></p>
 </li>
 </ul>
 </section>
-    <section class="slide"><h3 id="-">開發經驗</h3>
+  </div>
+  <div class="slide hidden" id="slide-3">
+    <section class="slide-content"><h3 id="-">開發經驗</h3>
 <ul>
-<li><p>Java, C, PHP</p>
+<li><p>Python, Java...</p>
 </li>
-<li><p>Bash shell</p>
+<li><p>Shell Script</p>
 </li>
 <li><p>Android</p>
 </li>
@@ -436,7 +403,9 @@ pre .chunk {
 </li>
 </ul>
 </section>
-    <section class="slide"><h3 id="-">緣起</h3>
+  </div>
+  <div class="slide hidden" id="slide-4">
+    <section class="slide-content"><h3 id="-">緣起</h3>
 <p><br /></p>
 <h2 style="font-size: 60px">
   <a href="http://www.openfoundry.org/tw/activities/details/396" target="_blank">
@@ -444,7 +413,9 @@ pre .chunk {
         歡迎來到 GitHub 新手村
   </a>
 </h2></section>
-    <section class="slide"><p><br /></p>
+  </div>
+  <div class="slide hidden" id="slide-5">
+    <section class="slide-content"><p><br /></p>
 <h2 style="font-size: 60px">
     銘傳大學 資管所<br />
     Oases Ong<br />
@@ -453,7 +424,9 @@ pre .chunk {
 <h2 style="font-size: 40px">
     Open Source Software 發展程序模型建構
 </h2></section>
-    <section class="slide"><h3 id="-">特別感謝</h3>
+  </div>
+  <div class="slide hidden" id="slide-6">
+    <section class="slide-content"><h3 id="-">特別感謝</h3>
 <p><br />
 <br /></p>
 <h2 style="font-size: 60px">
@@ -463,9 +436,13 @@ pre .chunk {
 <h2>
     本簡報題目來自於 Oases Ong 論文訪談問卷
 </h2></section>
-    <section class="slide"><h1 id="-">軟體工程？</h1>
+  </div>
+  <div class="slide hidden" id="slide-7">
+    <section class="slide-content"><h1 id="-">軟體工程？</h1>
 </section>
-    <section class="slide"><p><br /></p>
+  </div>
+  <div class="slide hidden" id="slide-8">
+    <section class="slide-content"><p><br /></p>
 <p><h2 style="font-size: 70px">
 系統性<br />
 規範化<br />
@@ -474,7 +451,9 @@ pre .chunk {
 <div align="right">
     <a href="http://zh.wikipedia.org/zh-tw/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B" target="_blank">wiki</a>
 </div></section>
-    <section class="slide"><ul>
+  </div>
+  <div class="slide hidden" id="slide-9">
+    <section class="slide-content"><ul>
 <li><p>Request and Analysis Phase（需求與分析階段）</p>
 </li>
 <li><p>Design Phase（設計階段）</p>
@@ -487,13 +466,19 @@ pre .chunk {
 </li>
 </ul>
 </section>
-    <section class="slide"><p><h1 style="font-size: 45px">
+  </div>
+  <div class="slide hidden" id="slide-10">
+    <section class="slide-content"><p><h1 style="font-size: 45px">
     Open Source project 的開發流程？
 </h2></p>
 </section>
-    <section class="slide"><h1 id="-">系統 / 工具</h1>
+  </div>
+  <div class="slide hidden" id="slide-11">
+    <section class="slide-content"><h1 id="-">系統 / 工具</h1>
 </section>
-    <section class="slide"><ul>
+  </div>
+  <div class="slide hidden" id="slide-12">
+    <section class="slide-content"><ul>
 <li>Mailing list<ul>
 <li>Google Groups</li>
 </ul>
@@ -513,19 +498,31 @@ pre .chunk {
 </li>
 </ul>
 </section>
-    <section class="slide"><h1 id="-">版本控制</h1>
+  </div>
+  <div class="slide hidden" id="slide-13">
+    <section class="slide-content"><h1 id="-">版本控制</h1>
 </section>
-    <section class="slide"><h1 id="git">Git</h1>
+  </div>
+  <div class="slide hidden" id="slide-14">
+    <section class="slide-content"><h1 id="git">Git</h1>
 </section>
-    <section class="slide"><div align="center">
+  </div>
+  <div class="slide hidden" id="slide-15">
+    <section class="slide-content"><div align="center">
     <img src="./img/git_branching_model.png" width="380"/>
     <a href="http://nvie.com/posts/a-successful-git-branching-model/" target="_blank">src</a>
 </div></section>
-    <section class="slide"><h1 id="-">溝通工具</h1>
+  </div>
+  <div class="slide hidden" id="slide-16">
+    <section class="slide-content"><h1 id="-">溝通工具</h1>
 </section>
-    <section class="slide"><h1 id="mailing-list">Mailing list</h1>
+  </div>
+  <div class="slide hidden" id="slide-17">
+    <section class="slide-content"><h1 id="mailing-list">Mailing list</h1>
 </section>
-    <section class="slide"><p><br /></p>
+  </div>
+  <div class="slide hidden" id="slide-18">
+    <section class="slide-content"><p><br /></p>
 <p><h2 style="font-size: 80px">
     <a href="https://groups.google.com" target="_blank">Google Groups</a><br />
 </h2>
@@ -534,7 +531,9 @@ pre .chunk {
     <a href="https://groups.google.com/forum/#!forum/sitcon-general" target="_blank">SITCON：日常</a><br />
     <a href="mailto:sitcon-general@googlegroups.com">sitcon-general@googlegroups.com</a>
 </div></section>
-    <section class="slide"><h3 id="-mail-">關於 Mail 的大小事</h3>
+  </div>
+  <div class="slide hidden" id="slide-19">
+    <section class="slide-content"><h3 id="-mail-">關於 Mail 的大小事</h3>
 <ul>
 <li>封存</li>
 <li>CC / BCC</li>
@@ -545,10 +544,14 @@ pre .chunk {
 <li>篩選器 / 標籤</li>
 </ul>
 </section>
-    <section class="slide"><h1 id="irc">IRC</h1>
+  </div>
+  <div class="slide hidden" id="slide-20">
+    <section class="slide-content"><h1 id="irc">IRC</h1>
 <h2 id="-sitcon-freenode">#SITCON@freenode</h2>
 </section>
-    <section class="slide"><h3 id="irc-client">IRC Client</h3>
+  </div>
+  <div class="slide hidden" id="slide-21">
+    <section class="slide-content"><h3 id="irc-client">IRC Client</h3>
 <ul>
 <li><p><a href="http://www.irssi.org/">Irssi</a></p>
 </li>
@@ -558,150 +561,201 @@ pre .chunk {
 </li>
 </ul>
 </section>
-    <section class="slide"><ul>
+  </div>
+  <div class="slide hidden" id="slide-22">
+    <section class="slide-content"><ul>
 <li><p><a href="http://freenode.net/faq.shtml#nicksetup">Registering your nick on freenode</a></p>
 </li>
 <li><p><a href="http://blog.freenode.net/2008/04/registering-a-channel-on-freenode/">Registering a channel on freenode</a></p>
 </li>
 </ul>
 </section>
-    <section class="slide"><p><br />
+  </div>
+  <div class="slide hidden" id="slide-23">
+    <section class="slide-content"><p><br />
 <br /></p>
 <h2 style="font-size: 60px">
     Request and Analysis Phase<br />
     需求與分析階段
 </h2></section>
-    <section class="slide"><ul>
+  </div>
+  <div class="slide hidden" id="slide-24">
+    <section class="slide-content"><ul>
 <li>由於專案的人員身處各地，非同步化的討論是否會花費過多的時間？你的看法是甚麼？</li>
 </ul>
 </section>
-    <section class="slide"><ul>
+  </div>
+  <div class="slide hidden" id="slide-25">
+    <section class="slide-content"><ul>
 <li>參與專案的使用者若無具備軟體工程的基本概念，是否會導致溝通不良呢？你的看法是甚麼？</li>
 </ul>
 </section>
-    <section class="slide"><ul>
+  </div>
+  <div class="slide hidden" id="slide-26">
+    <section class="slide-content"><ul>
 <li><p>以傳統軟體工程的觀點，分析使用者的工作流程、習慣，整理成圖表，才能逐一地找出使用者的需求。<br />
 所以，像OSS這樣無嚴謹化的需求分析真的能找出使用者的需求嗎？你的看法是甚麼？</p>
-<ul>
-<li><a href="http://feedly.uservoice.com/">Feedly</a><ul>
-<li><a href="http://feedly.uservoice.com/forums/192636-suggestions/suggestions/3756882-export-my-rss-data-from-feedly">成功案例</a></li>
-</ul>
 </li>
-</ul>
+<li><p><a href="https://github.com/MongoEngine/mongoengine/issues/858">https://github.com/MongoEngine/mongoengine/issues/858</a></p>
 </li>
 </ul>
 </section>
-    <section class="slide"><h1 style="font-size: 70px">
+  </div>
+  <div class="slide hidden" id="slide-27">
+    <section class="slide-content"><h1 style="font-size: 70px">
     Issue tracking system
 </h1></section>
-    <section class="slide"><ul>
-<li><p>GitHub</p>
-</li>
-<li><p><a href="http://staff.sitcon.org">SITCON</a></p>
-<ul>
-<li><a href="https://github.com/sitcon-tw/staff.sitcon.org">repo</a></li>
-</ul>
-</li>
-<li><p><a href="http://redmine.org">Redmine</a></p>
+  </div>
+  <div class="slide hidden" id="slide-28">
+    <section class="slide-content"><ul>
+<li><p><a href="https://github.com/">GitHub</a></p>
 </li>
 <li><p><a href="http://gitlab.org/">GitLab</a></p>
+</li>
+<li><p><a href="https://gogs.io/">Gogs</a></p>
+</li>
+<li><p><a href="http://redmine.org">Redmine</a></p>
 </li>
 <li><p><a href="http://phabricator.org/">Phabricator</a></p>
 </li>
 </ul>
 </section>
-    <section class="slide"><h3 id="sitcon">SITCON</h3>
+  </div>
+  <div class="slide hidden" id="slide-29">
+    <section class="slide-content"><h3 id="sitcon">SITCON</h3>
 <div align="center">
     <img src="./img/its_sitcon.png" width="800"/>
 </div></section>
-    <section class="slide"><h3 id="redmine">Redmine</h3>
+  </div>
+  <div class="slide hidden" id="slide-30">
+    <section class="slide-content"><h3 id="redmine">Redmine</h3>
 <div align="center">
     <img src="./img/its_redmine_list.png" width="800"/>
 </div></section>
-    <section class="slide"><h3 id="redmine">Redmine</h3>
+  </div>
+  <div class="slide hidden" id="slide-31">
+    <section class="slide-content"><h3 id="redmine">Redmine</h3>
 <div align="center">
     <img src="./img/its_redmine_cal.png" width="800"/>
 </div></section>
-    <section class="slide"><h3 id="redmine">Redmine</h3>
+  </div>
+  <div class="slide hidden" id="slide-32">
+    <section class="slide-content"><h3 id="redmine">Redmine</h3>
 <div align="center">
     <img src="./img/its_redmine_gantt.png" width="800"/>
 </div></section>
-    <section class="slide"><h3 id="gitlab">GitLab</h3>
+  </div>
+  <div class="slide hidden" id="slide-33">
+    <section class="slide-content"><h3 id="gitlab">GitLab</h3>
 <div align="center">
     <img src="./img/gitlab.png" width="800"/>
 </div></section>
-    <section class="slide"><h3 id="gitlab">GitLab</h3>
+  </div>
+  <div class="slide hidden" id="slide-34">
+    <section class="slide-content"><h3 id="gitlab">GitLab</h3>
 <div align="center">
     <img src="./img/gitlab_code_comment.png" width="800"/>
 </div></section>
-    <section class="slide"><h3 id="phabricator">Phabricator</h3>
+  </div>
+  <div class="slide hidden" id="slide-35">
+    <section class="slide-content"><h3 id="phabricator">Phabricator</h3>
 <div align="center">
     <img src="./img/phabricator.png" width="800"/>
 </div></section>
-    <section class="slide"><p><h1>
+  </div>
+  <div class="slide hidden" id="slide-36">
+    <section class="slide-content"><p><h1>
     <a href="https://github.com/denny0223/TOSW-test/issues" target="_blank">Demo</a>
 </h1></p>
 <h2>
-    sample: <a href="https://github.com/rogerwang/node-webkit/issue" target="_blank">node-webkit</a>
+    sample: <a href="https://github.com/nwjs/nw.js/issues" target="_blank">nw.js</a>
 </h2></section>
-    <section class="slide"><p><br />
+  </div>
+  <div class="slide hidden" id="slide-37">
+    <section class="slide-content"><p><br />
 <br /></p>
 <h2 style="font-size: 60px">
     Design Phase<br />
     設計階段
 </h2></section>
-    <section class="slide"><ul>
+  </div>
+  <div class="slide hidden" id="slide-38">
+    <section class="slide-content"><ul>
 <li>軟體的設計上是相當複雜的，所以採用簡單的架構，是否足夠?細部設計是由開發者自行設計或者仍需要溝通?如何溝通?</li>
 </ul>
 </section>
-    <section class="slide"><ul>
+  </div>
+  <div class="slide hidden" id="slide-39">
+    <section class="slide-content"><ul>
 <li>所設計的軟體架構的文件，能否充分表達設計概念？是否需要技術文件的附註？</li>
 </ul>
 </section>
-    <section class="slide"><h1 id="wiki">Wiki</h1>
-<h2 id="-demo-https-github-com-denny0223-tosw-test-wiki-sample-node-webkit-https-github-com-rogerwang-node-webkit-wiki-"><a href="https://github.com/denny0223/TOSW-test/wiki">Demo</a> / sample: <a href="https://github.com/rogerwang/node-webkit/wiki">node-webkit</a></h2>
+  </div>
+  <div class="slide hidden" id="slide-40">
+    <section class="slide-content"><h1 id="wiki">Wiki</h1>
+<h2 id="demo-sample-node-webkit"><a href="https://github.com/denny0223/TOSW-test/wiki">Demo</a> / sample: <a href="https://github.com/nwjs/nw.js/wiki">node-webkit</a></h2>
 </section>
-    <section class="slide"><ul>
+  </div>
+  <div class="slide hidden" id="slide-41">
+    <section class="slide-content"><ul>
 <li>軟體的環境會隨著技術的發展而變化，所以開發者如何因應？可否提出你的看法？</li>
 </ul>
 </section>
-    <section class="slide"><p><br />
+  </div>
+  <div class="slide hidden" id="slide-42">
+    <section class="slide-content"><p><br />
 <br /></p>
 <h2 style="font-size: 60px">
     Coding Phase<br />
     撰寫階段
 </h2></section>
-    <section class="slide"><ul>
+  </div>
+  <div class="slide hidden" id="slide-43">
+    <section class="slide-content"><ul>
 <li>傳統的程式開發會採用自上而下、自下而上等整合方法。在你的專案中是否會採用到上述的方法? 可否提出你的看法？</li>
 </ul>
 </section>
-    <section class="slide"><ul>
+  </div>
+  <div class="slide hidden" id="slide-44">
+    <section class="slide-content"><ul>
 <li>要reuse別人的程式碼到自己的專案中，這當中難道不會碰到結構上的問題嗎？如何處理？大部分reuse的程式碼需要修改嗎？還是只有部分的reuse的程式碼需要修改？</li>
 </ul>
 </section>
-    <section class="slide"><ul>
+  </div>
+  <div class="slide hidden" id="slide-45">
+    <section class="slide-content"><ul>
 <li>OSS的開發者進行開發時，對於所使用的開發工具或環境熟練嗎？若從未接觸過，他們是如何上手的呢？</li>
 </ul>
 </section>
-    <section class="slide"><p><br />
+  </div>
+  <div class="slide hidden" id="slide-46">
+    <section class="slide-content"><p><br />
 <br /></p>
 <h2 style="font-size: 60px">
     Testing Phase<br />
     測試階段
 </h2></section>
-    <section class="slide"><ul>
+  </div>
+  <div class="slide hidden" id="slide-47">
+    <section class="slide-content"><ul>
 <li>專案中，是否有使用同僚覆核（peer review）的方式互相檢視專案人員的程式內容？</li>
 </ul>
 </section>
-    <section class="slide"><ul>
+  </div>
+  <div class="slide hidden" id="slide-48">
+    <section class="slide-content"><ul>
 <li>有人使用同僚覆核，需不需要其他動態的測試方法？若有，如何進行？沒有，又如何彌補這部分之不足？</li>
 </ul>
 </section>
-    <section class="slide"><h1 id="testing">Testing</h1>
+  </div>
+  <div class="slide hidden" id="slide-49">
+    <section class="slide-content"><h1 id="testing">Testing</h1>
 <h2>
 <a href="https://github.com/denny0223/TOSW-test" target="_blank">Demo repo</a>
 </h2></section>
-    <section class="slide"><p><br /></p>
+  </div>
+  <div class="slide hidden" id="slide-50">
+    <section class="slide-content"><p><br /></p>
 <h2 style="font-size: 75px">
     Continuous integration
 </h2>
@@ -711,7 +765,9 @@ pre .chunk {
 <h2>
 <a href="https://travis-ci.org/" target="_blank">Travis</a> / <a href="http://jenkins-ci.org/" target="_blank">Jenkins</a>
 </h2></section>
-    <section class="slide"><p><br />
+  </div>
+  <div class="slide hidden" id="slide-51">
+    <section class="slide-content"><p><br />
 <br /></p>
 <h2 style="font-size: 75px">
     Travis
@@ -720,42 +776,60 @@ pre .chunk {
     <a href="https://github.com/denny0223/TOSW-test/blob/master/.travis.yml" target="_blank">.travis.yml</a> /
     <a href="https://travis-ci.org/denny0223/TOSW-test" target="_blank">result</a>
 </h2></section>
-    <section class="slide"><h3 id="jenkins">Jenkins</h3>
+  </div>
+  <div class="slide hidden" id="slide-52">
+    <section class="slide-content"><h3 id="jenkins">Jenkins</h3>
 <div align="center">
     <img src="./img/jenkins.png" width="800"/>
 </div></section>
-    <section class="slide"><ul>
+  </div>
+  <div class="slide hidden" id="slide-53">
+    <section class="slide-content"><ul>
 <li>OSS開發者是否會將軟體所出現錯誤進行分類？</li>
 </ul>
 </section>
-    <section class="slide"><ul>
+  </div>
+  <div class="slide hidden" id="slide-54">
+    <section class="slide-content"><ul>
 <li>OSS專案在發展模式和經濟的因素下，不會擁有專門進行軟體測試的QA團隊。所以只會有幾個committer或甚至是一個管理者，這樣的方式會不會較不嚴謹，錯誤率會不會偏高?</li>
 </ul>
 </section>
-    <section class="slide"><p><br />
+  </div>
+  <div class="slide hidden" id="slide-55">
+    <section class="slide-content"><p><br />
 <br /></p>
 <h2 style="font-size: 60px">
     Maintenance Phase<br />
     維護階段
 </h2></section>
-    <section class="slide"><ul>
+  </div>
+  <div class="slide hidden" id="slide-56">
+    <section class="slide-content"><ul>
 <li>由於OSS軟體的版本釋出的時間相較於商業軟體是較短的，所以在這麼短的軟體發展生命週期裡，如何維護軟體的品質？是否較為困難？</li>
 </ul>
 </section>
-    <section class="slide"><ul>
+  </div>
+  <div class="slide hidden" id="slide-57">
+    <section class="slide-content"><ul>
 <li>開發者和使用者對於專案所發展的軟體，若沒有較宏觀的軟體架構的話，往後在系統整合或維護上是否相對困難？</li>
 </ul>
 </section>
-    <section class="slide"><ul>
+  </div>
+  <div class="slide hidden" id="slide-58">
+    <section class="slide-content"><ul>
 <li>由於非嚴謹的溝通和非標準的流程，是否會造成花費過多的時間？</li>
 </ul>
 </section>
-    <section class="slide"><p><br />
+  </div>
+  <div class="slide hidden" id="slide-59">
+    <section class="slide-content"><p><br />
 <br /></p>
 <h2 style="font-size: 65px">
     動手練習實際付諸行動吧！
 </h2></section>
-    <section class="slide"><h1 style="font-size:72px">Thanks for listening</h1>
+  </div>
+  <div class="slide hidden" id="slide-60">
+    <section class="slide-content"><h1 style="font-size:72px">Thanks for listening</h1>
 
 <p><br /></p>
 <p><div align="center">
@@ -764,7 +838,8 @@ pre .chunk {
 <h2 style="font-size: 18px">
 本投影片採用<a href="http://creativecommons.org/licenses/by-sa/3.0/tw/" target="_blank">創用 CC「姓名標示—相同方式分享 3.0 台灣」授權條款</a>
 </h2></section>
-</div>
+  </div>
+
   <div class="controls">
     <div class="arrow prev"></div>
     <div class="arrow next"></div>
@@ -773,107 +848,62 @@ pre .chunk {
 
   <script type="text/javascript">
     /**
- * Takes the last slide and places it at the front.
+ * Returns the current page number of the presentation.
  */
-function goBack() {
-  var wrapper = document.querySelector('#wrapper');
-  var lastSlide = wrapper.lastChild;
-  while (lastSlide !== null && lastSlide.nodeType !== 1) {
-    lastSlide = lastSlide.previousSibling;
-  }
-
-  wrapper.removeChild(lastSlide);
-  wrapper.insertBefore(lastSlide, wrapper.firstChild);
-
-  setCurrentProgress();
-  updateURL();
-  updateTabIndex();
+function currentPosition() {
+  return parseInt(document.querySelector('.slide:not(.hidden)').id.slice(6));
 }
+
 
 /**
- * Takes the first slide and places it at the end.
+ * Navigates forward n pages
+ * If n is negative, we will navigate in reverse
  */
-function goForward() {
-  var wrapper = document.querySelector('#wrapper');
-  var firstSlide = wrapper.firstChild;
-  while (firstSlide !== null && firstSlide.nodeType !== 1) {
-    firstSlide = firstSlide.nextSibling;
-  }
+function navigate(n) {
+  var position = currentPosition();
+  var numSlides = document.getElementsByClassName('slide').length;
 
-  wrapper.removeChild(firstSlide);
-  wrapper.appendChild(firstSlide);
+  /* Positions are 1-indexed, so we need to add and subtract 1 */
+  var nextPosition = (position - 1 + n) % numSlides + 1;
 
-  setCurrentProgress();
+  /* Normalize nextPosition in-case of a negative modulo result */
+  nextPosition = (nextPosition - 1 + numSlides) % numSlides + 1;
+
+  document.getElementById('slide-' + position).classList.add('hidden');
+  document.getElementById('slide-' + nextPosition).classList.remove('hidden');
+
+  updateProgress();
   updateURL();
   updateTabIndex();
 }
+
 
 /**
  * Updates the current URL to include a hashtag of the current page number.
  */
 function updateURL() {
-  window.history.replaceState({} , null, '#' + currentPage());
-}
-
-/**
- * Returns the current page number of the presentation.
- */
-function currentPage() {
-  return document.querySelector('#wrapper .slide').dataset.page;
-}
-
-/**
- * Returns a NodeList of each .slide element.
- */
-function allSlides() {
-  return document.querySelectorAll('#wrapper .slide');
-}
-
-/**
- * Give each slide a "page" data attribute.
- */
-function setPageNumbers() {
-  var wrapper = document.querySelector('#wrapper');
-  var pages   = wrapper.querySelectorAll('section');
-  var page;
-
-  for (var i = 0; i < pages.length; ++i) {
-    page = pages[i];
-    page.dataset.page = i;
+  try {
+    window.history.replaceState({} , null, '#' + currentPosition());
+  } catch (e) {
+    window.location.hash = currentPosition();
   }
 }
 
+
 /**
- * Set the current progress indicator.
+ * Sets the progress indicator.
  */
-function setCurrentProgress() {
-  var wrapper = document.querySelector('#wrapper');
+function updateProgress() {
   var progressBar = document.querySelector('.progress-bar');
 
   if (progressBar !== null) {
-    var pagesNumber    = wrapper.querySelectorAll('section').length;
-    var currentNumber  = parseInt(currentPage(), 10);
-    var currentPercent = pagesNumber === 1 ? 100 : 100 * currentNumber / (pagesNumber - 1);
-    progressBar.style.width = currentPercent.toString() + '%';
+    var numSlides = document.getElementsByClassName('slide').length;
+    var position = currentPosition() - 1;
+    var percent = (numSlides === 1) ? 100 : 100 * position / (numSlides - 1);
+    progressBar.style.width = percent.toString() + '%';
   }
 }
 
-/**
- * Go to the specified page of content.
- */
-function goToPage(page) {
-  // Try to find the target slide.
-  var targetSlide = document.querySelector('#wrapper .slide[data-page="' + page + '"]');
-
-  // If it actually exists, go forward until we find it.
-  if (targetSlide) {
-    var numSlides = allSlides().length;
-
-    for (var i = 0; currentPage() !== page && i < numSlides; i++) {
-      goForward();
-    }
-  }
-}
 
 /**
  * Removes tabindex property from all links on the current slide, sets
@@ -882,7 +912,8 @@ function goToPage(page) {
  */
 function updateTabIndex() {
   var allLinks = document.querySelectorAll('.slide a');
-  var currentPageLinks = document.querySelector('.slide').querySelectorAll('a');
+  var position = currentPosition();
+  var currentPageLinks = document.getElementById('slide-' + position).querySelectorAll('a');
   var i;
 
   for (i = 0; i < allLinks.length; i++) {
@@ -890,49 +921,81 @@ function updateTabIndex() {
   }
 
   for (i = 0; i < currentPageLinks.length; i++) {
-    allLinks[i].removeAttribute('tabindex');
+    currentPageLinks[i].removeAttribute('tabindex');
   }
 }
 
-window.onload = function () {
+/**
+ * Determines whether or not we are currently in full screen mode
+ */
+function isFullScreen() {
+  return document.fullscreenElement ||
+         document.mozFullScreenElement ||
+         document.webkitFullscreenElement ||
+         document.msFullscreenElement;
+}
 
-  // Give each slide a "page" data attribute.
-  setPageNumbers();
+/**
+ * Toggle fullScreen mode on document element.
+ * Works on chrome (>= 15), firefox (>= 9), ie (>= 11), opera(>= 12.1), safari (>= 5).
+ */
+function toggleFullScreen() {
+  /* Convenient renames */
+  var docElem = document.documentElement;
+  var doc = document;
 
+  docElem.requestFullscreen =
+      docElem.requestFullscreen ||
+      docElem.msRequestFullscreen ||
+      docElem.mozRequestFullScreen ||
+      docElem.webkitRequestFullscreen.bind(docElem, Element.ALLOW_KEYBOARD_INPUT);
+
+  doc.exitFullscreen =
+      doc.exitFullscreen ||
+      doc.msExitFullscreen ||
+      doc.mozCancelFullScreen ||
+      doc.webkitExitFullscreen;
+
+  isFullScreen() ? doc.exitFullscreen() : docElem.requestFullscreen();
+}
+
+document.addEventListener('DOMContentLoaded', function () {
   // Update the tabindex to prevent weird slide transitioning
   updateTabIndex();
 
   // If the location hash specifies a page number, go to it.
   var page = window.location.hash.slice(1);
   if (page) {
-    goToPage(page);
+    navigate(parseInt(page) - 1);
   }
 
   document.onkeydown = function (e) {
     var kc = e.keyCode;
 
     // left, down, H, J, backspace, PgUp - BACK
-    // up, right, K, L, space, enter, PgDn - FORWARD
+    // up, right, K, L, space, PgDn - FORWARD
+    // enter - FULLSCREEN
     if (kc === 37 || kc === 40 || kc === 8 || kc === 72 || kc === 74 || kc === 33) {
-      goBack();
-    } else if (kc === 38 || kc === 39 || kc === 13 || kc === 32 || kc === 75 || kc === 76 || kc === 34) {
-      goForward();
+      navigate(-1);
+    } else if (kc === 38 || kc === 39 || kc === 32 || kc === 75 || kc === 76 || kc === 34) {
+      navigate(1);
+    } else if (kc === 13) {
+      toggleFullScreen();
     }
   };
 
   if (document.querySelector('.next') && document.querySelector('.prev')) {
     document.querySelector('.next').onclick = function (e) {
       e.preventDefault();
-      goForward();
+      navigate(1);
     };
 
     document.querySelector('.prev').onclick = function (e) {
       e.preventDefault();
-      goBack();
+      navigate(-1);
     };
   }
-
-};
+});
 
 
   </script>
