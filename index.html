@@ -3,7 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-  <title>從軟體工程角度反思自由軟體開發</title>
+  <title>開放原始碼專案的軟體工程實踐</title>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KM6KHPC7');</script>
+  <!-- End Google Tag Manager -->
   <style type="text/css">
     body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -358,28 +365,24 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
 
   </style>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39377010-4"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-39377010-4');
-  </script>
 </head>
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KM6KHPC7"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
     <div class="progress">
     <div class="progress-bar"></div>
   </div>
 
   <div class="slide" id="slide-1">
     <section class="slide-content"><p><h1 style="font-size: 72px">
-  從軟體工程角度<br />
-  反思自由軟體開發
+  開放原始碼專案的<br />
+  軟體工程實踐
 </h1>
 <br /></p>
 <h2 id="denny-huang">Denny Huang</h2>
+<h2 id="2023-09-06">2023/09/06</h2>
 </section>
   </div>
   <div class="slide hidden" id="slide-2">
@@ -392,7 +395,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 <ul>
 <li><p>雷亞遊戲 Rayark Inc.</p>
 </li>
-<li><p>SITCON 2013, 2014 總召</p>
+<li><p>SITCON 學生計算機年會 共同發起人</p>
 </li>
 <li><p><a href="https://denny.one/" target="_blank">About me</a></p>
 </li>
@@ -400,57 +403,14 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 </section>
   </div>
   <div class="slide hidden" id="slide-3">
-    <section class="slide-content"><h3 id="-">開發經驗</h3>
-<ul>
-<li><p>Python, Java...</p>
-</li>
-<li><p>Shell Script</p>
-</li>
-<li><p>Android</p>
-</li>
-<li><p>系統 / 網路 / 後端</p>
-</li>
-</ul>
+    <section class="slide-content"><h1 id="-">開發經驗</h1>
 </section>
   </div>
   <div class="slide hidden" id="slide-4">
-    <section class="slide-content"><h3 id="-">緣起</h3>
-<p><br /></p>
-<h2 style="font-size: 60px">
-  <a href="http://www.openfoundry.org/tw/activities/details/396" target="_blank">
-        HackGen Workshop - <br />
-        歡迎來到 GitHub 新手村
-  </a>
-</h2></section>
-  </div>
-  <div class="slide hidden" id="slide-5">
-    <section class="slide-content"><p><br /></p>
-<h2 style="font-size: 60px">
-    銘傳大學 資管所<br />
-    Oases Ong<br />
-</h2>
-<br />
-<h2 style="font-size: 40px">
-    Open Source Software 發展程序模型建構
-</h2></section>
-  </div>
-  <div class="slide hidden" id="slide-6">
-    <section class="slide-content"><h3 id="-">特別感謝</h3>
-<p><br />
-<br /></p>
-<h2 style="font-size: 60px">
-    Oases Ong<br />
-</h2>
-<br />
-<h2>
-    本簡報題目來自於 Oases Ong 論文訪談問卷
-</h2></section>
-  </div>
-  <div class="slide hidden" id="slide-7">
     <section class="slide-content"><h1 id="-">軟體工程？</h1>
 </section>
   </div>
-  <div class="slide hidden" id="slide-8">
+  <div class="slide hidden" id="slide-5">
     <section class="slide-content"><p><br /></p>
 <p><h2 style="font-size: 70px">
 系統性<br />
@@ -461,7 +421,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     <a href="http://zh.wikipedia.org/zh-tw/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B" target="_blank">wiki</a>
 </div></section>
   </div>
-  <div class="slide hidden" id="slide-9">
+  <div class="slide hidden" id="slide-6">
     <section class="slide-content"><ul>
 <li><p>Request and Analysis Phase（需求與分析階段）</p>
 </li>
@@ -476,111 +436,44 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 </ul>
 </section>
   </div>
+  <div class="slide hidden" id="slide-7">
+    <section class="slide-content"><h1 style="font-size: 45px">
+    Open Source Project 的開發流程？
+</h1></section>
+  </div>
+  <div class="slide hidden" id="slide-8">
+    <section class="slide-content"><h1 id="-"><a href="https://zh.wikipedia.org/wiki/%E5%A4%A7%E6%95%99%E5%A0%82%E5%92%8C%E5%B8%82%E9%9B%86">大教堂和市集</a></h1>
+<h2 id="-"><a href="https://www.zhihu.com/question/36292298/answer/160028010">維護一個大型開源項目是怎樣的體驗？</a></h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-9">
+    <section class="slide-content"><h1 id="-">溝通及討論平台</h1>
+</section>
+  </div>
   <div class="slide hidden" id="slide-10">
-    <section class="slide-content"><p><h1 style="font-size: 45px">
-    Open Source project 的開發流程？
-</h2></p>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-11">
-    <section class="slide-content"><h1 id="-">系統 / 工具</h1>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-12">
     <section class="slide-content"><ul>
+<li>Slack<ul>
+<li><a href="https://g0v.hackmd.io/@jothon/joing0vslack">g0v</a> / <a href="https://firebase.community/">Firebase</a></li>
+</ul>
+</li>
+<li>Telegram</li>
+<li>Gitter</li>
 <li>Mailing list<ul>
-<li>Google Groups</li>
+<li><a href="https://groups.google.com/">Google Groups</a> / <a href="https://gitlab.com/mailman/hyperkitty">HyperKitty</a></li>
+<li><a href="https://groups.google.com/g/sitcon-general">SITCON：日常</a> / <a href="https://mail.gnome.org/archives/">Fedora</a> / <a href="https://lore.kernel.org/">Linux Kernel</a></li>
+<li><a href="https://mail.gnome.org/">GNOME Project</a></li>
 </ul>
 </li>
 <li>IRC<ul>
-<li>ChatZilla / irssi / webchat</li>
-</ul>
-</li>
-<li>Issue tracking system<ul>
-<li>GitHub</li>
-</ul>
-</li>
-<li>Wiki</li>
-<li>Continuous integration service<ul>
-<li>Travis CI</li>
+<li>irssi / webchat</li>
+<li><a href="https://libera.chat/">Libera.Chat</a> / <a href="https://freenode.net/">freenode</a></li>
+<li><a href="https://sitcon.org/irc">SITCON IRC</a></li>
 </ul>
 </li>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-13">
-    <section class="slide-content"><h1 id="-">版本控制</h1>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-14">
-    <section class="slide-content"><h1 id="git">Git</h1>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-15">
-    <section class="slide-content"><div align="center">
-    <img src="./img/git_branching_model.png" width="380"/>
-    <a href="http://nvie.com/posts/a-successful-git-branching-model/" target="_blank">src</a>
-</div></section>
-  </div>
-  <div class="slide hidden" id="slide-16">
-    <section class="slide-content"><h1 id="-">溝通工具</h1>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-17">
-    <section class="slide-content"><h1 id="mailing-list">Mailing list</h1>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-18">
-    <section class="slide-content"><p><br /></p>
-<p><h2 style="font-size: 80px">
-    <a href="https://groups.google.com" target="_blank">Google Groups</a><br />
-</h2>
-<br /></p>
-<div align="center">
-    <a href="https://groups.google.com/forum/#!forum/sitcon-general" target="_blank">SITCON：日常</a><br />
-    <a href="mailto:sitcon-general@googlegroups.com">sitcon-general@googlegroups.com</a>
-</div></section>
-  </div>
-  <div class="slide hidden" id="slide-19">
-    <section class="slide-content"><h3 id="-mail-">關於 Mail 的大小事</h3>
-<ul>
-<li>封存</li>
-<li>CC / BCC</li>
-<li>引用</li>
-<li>打招呼 <strong>告訴別人你是誰</strong> 結尾署名</li>
-<li>設定 回覆所有人</li>
-<li>Lab 取消傳送</li>
-<li>篩選器 / 標籤</li>
-</ul>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-20">
-    <section class="slide-content"><h1 id="irc">IRC</h1>
-<h2 id="-sitcon-freenode">#SITCON@freenode</h2>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-21">
-    <section class="slide-content"><h3 id="irc-client">IRC Client</h3>
-<ul>
-<li><p><a href="http://www.irssi.org/">Irssi</a></p>
-</li>
-<li><p><a href="https://addons.mozilla.org/zh-TW/firefox/addon/chatzilla/">ChatZilla</a></p>
-</li>
-<li><p><a href="http://webchat.freenode.net/?channels=sitcon">Web</a></p>
-</li>
-</ul>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-22">
-    <section class="slide-content"><ul>
-<li><p><a href="http://freenode.net/faq.shtml#nicksetup">Registering your nick on freenode</a></p>
-</li>
-<li><p><a href="http://blog.freenode.net/2008/04/registering-a-channel-on-freenode/">Registering a channel on freenode</a></p>
-</li>
-</ul>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-23">
+  <div class="slide hidden" id="slide-11">
     <section class="slide-content"><p><br />
 <br /></p>
 <h2 style="font-size: 60px">
@@ -588,99 +481,30 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     需求與分析階段
 </h2></section>
   </div>
-  <div class="slide hidden" id="slide-24">
-    <section class="slide-content"><ul>
-<li>由於專案的人員身處各地，非同步化的討論是否會花費過多的時間？你的看法是甚麼？</li>
-</ul>
+  <div class="slide hidden" id="slide-12">
+    <section class="slide-content"><h1 id="opass"><a href="https://opass.app/">OPass</a></h1>
 </section>
   </div>
-  <div class="slide hidden" id="slide-25">
-    <section class="slide-content"><ul>
-<li>參與專案的使用者若無具備軟體工程的基本概念，是否會導致溝通不良呢？你的看法是甚麼？</li>
-</ul>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-26">
-    <section class="slide-content"><ul>
-<li><p>以傳統軟體工程的觀點，分析使用者的工作流程、習慣，整理成圖表，才能逐一地找出使用者的需求。<br />
-所以，像 OSS 這樣無嚴謹化的需求分析真的能找出使用者的需求嗎？你的看法是甚麼？</p>
-</li>
-<li><p><a href="https://github.com/MongoEngine/mongoengine/issues/858">https://github.com/MongoEngine/mongoengine/issues/858</a></p>
-</li>
-</ul>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-27">
+  <div class="slide hidden" id="slide-13">
     <section class="slide-content"><h1 style="font-size: 70px">
-    Issue tracking system
+    Issue Tracking System
 </h1></section>
   </div>
-  <div class="slide hidden" id="slide-28">
-    <section class="slide-content"><ul>
-<li><p><a href="https://github.com/">GitHub</a></p>
-</li>
-<li><p><a href="http://gitlab.org/">GitLab</a></p>
-</li>
-<li><p><a href="https://gogs.io/">Gogs</a></p>
-</li>
-<li><p><a href="http://redmine.org">Redmine</a></p>
-</li>
-<li><p><a href="http://phabricator.org/">Phabricator</a></p>
-</li>
-</ul>
+  <div class="slide hidden" id="slide-14">
+    <section class="slide-content"><h1 id="github-projects"><a href="https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects">GitHub Projects</a></h1>
+<h2 id="hudi-issue-support"><a href="https://github.com/orgs/apache/projects/40">Hudi Issue Support</a></h2>
 </section>
   </div>
-  <div class="slide hidden" id="slide-29">
-    <section class="slide-content"><h3 id="sitcon">SITCON</h3>
-<div align="center">
-    <img src="./img/its_sitcon.png" width="800"/>
-</div></section>
+  <div class="slide hidden" id="slide-15">
+    <section class="slide-content"><h1 id="gitlab-issue-board"><a href="https://docs.gitlab.com/ee/user/project/issue_board.html">GitLab Issue Board</a></h1>
+<h2 id="gnome-shell-sitcon-camp-2023"><a href="https://gitlab.gnome.org/GNOME/gnome-shell/-/boards">GNOME shell</a> / <a href="https://gitlab.com/sitcon-tw/camp-2023/sitcon-camp-2023-board/-/boards">SITCON Camp 2023</a></h2>
+</section>
   </div>
-  <div class="slide hidden" id="slide-30">
-    <section class="slide-content"><h3 id="redmine">Redmine</h3>
-<div align="center">
-    <img src="./img/its_redmine_list.png" width="800"/>
-</div></section>
+  <div class="slide hidden" id="slide-16">
+    <section class="slide-content"><h1 id="-"><a href="https://github.com/nwjs/nw.js/issues/293">錯誤示範</a></h1>
+</section>
   </div>
-  <div class="slide hidden" id="slide-31">
-    <section class="slide-content"><h3 id="redmine">Redmine</h3>
-<div align="center">
-    <img src="./img/its_redmine_cal.png" width="800"/>
-</div></section>
-  </div>
-  <div class="slide hidden" id="slide-32">
-    <section class="slide-content"><h3 id="redmine">Redmine</h3>
-<div align="center">
-    <img src="./img/its_redmine_gantt.png" width="800"/>
-</div></section>
-  </div>
-  <div class="slide hidden" id="slide-33">
-    <section class="slide-content"><h3 id="gitlab">GitLab</h3>
-<div align="center">
-    <img src="./img/gitlab.png" width="800"/>
-</div></section>
-  </div>
-  <div class="slide hidden" id="slide-34">
-    <section class="slide-content"><h3 id="gitlab">GitLab</h3>
-<div align="center">
-    <img src="./img/gitlab_code_comment.png" width="800"/>
-</div></section>
-  </div>
-  <div class="slide hidden" id="slide-35">
-    <section class="slide-content"><h3 id="phabricator">Phabricator</h3>
-<div align="center">
-    <img src="./img/phabricator.png" width="800"/>
-</div></section>
-  </div>
-  <div class="slide hidden" id="slide-36">
-    <section class="slide-content"><p><h1>
-    <a href="https://github.com/denny0223/TOSW-test/issues" target="_blank">Demo</a>
-</h1></p>
-<h2>
-    sample: <a href="https://github.com/nwjs/nw.js/issues" target="_blank">nw.js</a>
-</h2></section>
-  </div>
-  <div class="slide hidden" id="slide-37">
+  <div class="slide hidden" id="slide-17">
     <section class="slide-content"><p><br />
 <br /></p>
 <h2 style="font-size: 60px">
@@ -688,30 +512,12 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     設計階段
 </h2></section>
   </div>
-  <div class="slide hidden" id="slide-38">
-    <section class="slide-content"><ul>
-<li>軟體的設計上是相當複雜的，所以採用簡單的架構，是否足夠？細部設計是由開發者自行設計或者仍需要溝通？如何溝通？</li>
-</ul>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-39">
-    <section class="slide-content"><ul>
-<li>所設計的軟體架構的文件，能否充分表達設計概念？是否需要技術文件的附註？</li>
-</ul>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-40">
+  <div class="slide hidden" id="slide-18">
     <section class="slide-content"><h1 id="wiki">Wiki</h1>
-<h2 id="demo-sample-node-webkit"><a href="https://github.com/denny0223/TOSW-test/wiki">Demo</a> / sample: <a href="https://github.com/nwjs/nw.js/wiki">node-webkit</a></h2>
+<h2 id="gnome-project-nw-js"><a href="https://wiki.gnome.org/">GNOME Project</a> / <a href="https://github.com/nwjs/nw.js/wiki">nw.js</a></h2>
 </section>
   </div>
-  <div class="slide hidden" id="slide-41">
-    <section class="slide-content"><ul>
-<li>軟體的環境會隨著技術的發展而變化，所以開發者如何因應？可否提出你的看法？</li>
-</ul>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-42">
+  <div class="slide hidden" id="slide-19">
     <section class="slide-content"><p><br />
 <br /></p>
 <h2 style="font-size: 60px">
@@ -719,25 +525,21 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     撰寫階段
 </h2></section>
   </div>
-  <div class="slide hidden" id="slide-43">
-    <section class="slide-content"><ul>
-<li>傳統的程式開發會採用自上而下、自下而上等整合方法。在你的專案中是否會採用到上述的方法？可否提出你的看法？</li>
-</ul>
+  <div class="slide hidden" id="slide-20">
+    <section class="slide-content"><h1 id="-">版本控制</h1>
 </section>
   </div>
-  <div class="slide hidden" id="slide-44">
-    <section class="slide-content"><ul>
-<li>要 reuse 別人的程式碼到自己的專案中，這當中難道不會碰到結構上的問題嗎？如何處理？大部分 reuse 的程式碼需要修改嗎？還是只有部分的 reuse 的程式碼需要修改？</li>
-</ul>
+  <div class="slide hidden" id="slide-21">
+    <section class="slide-content"><h1 id="git">Git</h1>
 </section>
   </div>
-  <div class="slide hidden" id="slide-45">
-    <section class="slide-content"><ul>
-<li>OSS 的開發者進行開發時，對於所使用的開發工具或環境熟練嗎？若從未接觸過，他們是如何上手的呢？</li>
-</ul>
-</section>
+  <div class="slide hidden" id="slide-22">
+    <section class="slide-content"><div align="center">
+    <img src="./img/git_branching_model.png" width="380"/>
+    <a href="http://nvie.com/posts/a-successful-git-branching-model/" target="_blank">src</a>
+</div></section>
   </div>
-  <div class="slide hidden" id="slide-46">
+  <div class="slide hidden" id="slide-23">
     <section class="slide-content"><p><br />
 <br /></p>
 <h2 style="font-size: 60px">
@@ -745,71 +547,32 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     測試階段
 </h2></section>
   </div>
-  <div class="slide hidden" id="slide-47">
-    <section class="slide-content"><ul>
-<li>專案中，是否有使用同僚覆核（peer review）的方式互相檢視專案人員的程式內容？</li>
+  <div class="slide hidden" id="slide-24">
+    <section class="slide-content"><h3 id="testing">Testing</h3>
+<ul>
+<li><a href="https://pkg.go.dev/testing">Golang testing package</a></li>
+<li><a href="https://docs.python.org/3/library/unittest.html">Python unittest</a></li>
+<li><a href="https://nodejs.org/api/test.html">Node.js Test runner</a></li>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-48">
-    <section class="slide-content"><ul>
-<li>有人使用同僚覆核，需不需要其他動態的測試方法？若有，如何進行？沒有，又如何彌補這部分之不足？</li>
-</ul>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-49">
-    <section class="slide-content"><h1 id="testing">Testing</h1>
-<h2>
-<a href="https://github.com/denny0223/TOSW-test" target="_blank">Demo repo</a>
-</h2></section>
-  </div>
-  <div class="slide hidden" id="slide-50">
+  <div class="slide hidden" id="slide-25">
     <section class="slide-content"><p><br /></p>
 <h2 style="font-size: 75px">
-    Continuous integration
-</h2>
-<div align="right">
-    <a href="http://www.dotblogs.com.tw/hatelove/archive/2011/12/25/introducing-continuous-integration.aspx" target="_blank">ref</a>
-</div>
-<h2>
-<a href="https://travis-ci.org/" target="_blank">Travis</a> / <a href="http://jenkins-ci.org/" target="_blank">Jenkins</a>
+    Continuous Integration / Continuous Delivery
 </h2></section>
   </div>
-  <div class="slide hidden" id="slide-51">
-    <section class="slide-content"><p><br />
-<br /></p>
-<h2 style="font-size: 75px">
-    Travis
-</h2>
-<h2>
-    <a href="https://github.com/denny0223/TOSW-test/blob/master/.travis.yml" target="_blank">.travis.yml</a> /
-    <a href="https://travis-ci.org/denny0223/TOSW-test" target="_blank">result</a>
-</h2></section>
-  </div>
-  <div class="slide hidden" id="slide-52">
-    <section class="slide-content"><h3 id="jenkins">Jenkins</h3>
-<div align="center">
-    <img src="./img/jenkins.png" width="800"/>
-</div></section>
-  </div>
-  <div class="slide hidden" id="slide-53">
-    <section class="slide-content"><div align="center">
-  <img style="width:800px" src="./img/ci.png" />
-</div></section>
-  </div>
-  <div class="slide hidden" id="slide-54">
-    <section class="slide-content"><ul>
-<li>OSS 開發者是否會將軟體所出現錯誤進行分類？</li>
-</ul>
+  <div class="slide hidden" id="slide-26">
+    <section class="slide-content"><h1 id="github-actions"><a href="https://github.com/features/actions">GitHub Actions</a></h1>
+<h2 id="sitcon-2022"><a href="https://github.com/sitcon-tw/2022/actions">SITCON 2022</a></h2>
 </section>
   </div>
-  <div class="slide hidden" id="slide-55">
-    <section class="slide-content"><ul>
-<li>OSS 專案在發展模式和經濟的因素下，不會擁有專門進行軟體測試的 QA 團隊。所以只會有幾個 committer 或甚至是一個管理者，這樣的方式會不會較不嚴謹，錯誤率會不會偏高？</li>
-</ul>
+  <div class="slide hidden" id="slide-27">
+    <section class="slide-content"><h1 id="gitlab-ci"><a href="https://docs.gitlab.com/ee/ci/">GitLab CI</a></h1>
+<h2 id="gnome-shell"><a href="https://gitlab.gnome.org/GNOME/gnome-shell/-/pipelines">gnome-shell</a></h2>
 </section>
   </div>
-  <div class="slide hidden" id="slide-56">
+  <div class="slide hidden" id="slide-28">
     <section class="slide-content"><p><br />
 <br /></p>
 <h2 style="font-size: 60px">
@@ -817,32 +580,12 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     維護階段
 </h2></section>
   </div>
-  <div class="slide hidden" id="slide-57">
-    <section class="slide-content"><ul>
-<li>由於 OSS 軟體的版本釋出的時間相較於商業軟體是較短的，所以在這麼短的軟體發展生命週期裡，如何維護軟體的品質？是否較為困難？</li>
-</ul>
+  <div class="slide hidden" id="slide-29">
+    <section class="slide-content"><h1 id="example-aosp">Example: AOSP</h1>
+<h2 id="report-bugs"><a href="https://source.android.com/docs/setup/contribute/report-bugs">Report Bugs</a></h2>
 </section>
   </div>
-  <div class="slide hidden" id="slide-58">
-    <section class="slide-content"><ul>
-<li>開發者和使用者對於專案所發展的軟體，若沒有較宏觀的軟體架構的話，往後在系統整合或維護上是否相對困難？</li>
-</ul>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-59">
-    <section class="slide-content"><ul>
-<li>由於非嚴謹的溝通和非標準的流程，是否會造成花費過多的時間？</li>
-</ul>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-60">
-    <section class="slide-content"><p><br />
-<br /></p>
-<h2 style="font-size: 65px">
-    動手練習實際付諸行動吧！
-</h2></section>
-  </div>
-  <div class="slide hidden" id="slide-61">
+  <div class="slide hidden" id="slide-30">
     <section class="slide-content"><h1 style="font-size:72px">Thanks for listening</h1>
 
 <p><br /></p>

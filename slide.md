@@ -1,14 +1,15 @@
-title: 從軟體工程角度反思自由軟體開發
+title: 開放原始碼專案的軟體工程實踐
 output: index.html
 --
 
 <h1 style="font-size: 72px">
-  從軟體工程角度<br />
-  反思自由軟體開發
+  開放原始碼專案的<br />
+  軟體工程實踐
 </h1>
 <br />
 
 ## Denny Huang
+## 2023/09/06
 
 --
 
@@ -21,58 +22,13 @@ output: index.html
 
 * 雷亞遊戲 Rayark Inc.
 
-* SITCON 2013, 2014 總召
+* SITCON 學生計算機年會 共同發起人
 
 * <a href="https://denny.one/" target="_blank">About me</a>
 
 --
 
-### 開發經驗
-
-* Python, Java...
-
-* Shell Script
-
-* Android
-
-* 系統 / 網路 / 後端
-
---
-
-### 緣起
-
-<br />
-<h2 style="font-size: 60px">
-  <a href="http://www.openfoundry.org/tw/activities/details/396" target="_blank">
-		HackGen Workshop - <br />
-		歡迎來到 GitHub 新手村
-  </a>
-</h2>
-
---
-
-<br />
-<h2 style="font-size: 60px">
-	銘傳大學 資管所<br />
-	Oases Ong<br />
-</h2>
-<br />
-<h2 style="font-size: 40px">
-	Open Source Software 發展程序模型建構
-</h2>
-
---
-
-### 特別感謝
-<br />
-<br />
-<h2 style="font-size: 60px">
-	Oases Ong<br />
-</h2>
-<br />
-<h2>
-	本簡報題目來自於 Oases Ong 論文訪談問卷
-</h2>
+# 開發經驗
 
 --
 
@@ -105,24 +61,88 @@ output: index.html
 --
 
 <h1 style="font-size: 45px">
-	Open Source project 的開發流程？
+	Open Source Project 的開發流程？
+</h1>
+
+--
+
+# [大教堂和市集](https://zh.wikipedia.org/wiki/%E5%A4%A7%E6%95%99%E5%A0%82%E5%92%8C%E5%B8%82%E9%9B%86)
+## [維護一個大型開源項目是怎樣的體驗？](https://www.zhihu.com/question/36292298/answer/160028010)
+
+--
+
+# 溝通及討論平台
+
+--
+
+- Slack
+	- [g0v](https://g0v.hackmd.io/@jothon/joing0vslack) / [Firebase](https://firebase.community/)
+- Telegram
+- Gitter
+- Mailing list
+	- [Google Groups](https://groups.google.com/) / [HyperKitty](https://gitlab.com/mailman/hyperkitty)
+	- [SITCON：日常](https://groups.google.com/g/sitcon-general) / [Fedora](https://mail.gnome.org/archives/) / [Linux Kernel](https://lore.kernel.org/)
+	- [GNOME Project](https://mail.gnome.org/)
+- IRC
+	- irssi / webchat
+	- [Libera.Chat](https://libera.chat/) / [freenode](https://freenode.net/)
+	- [SITCON IRC](https://sitcon.org/irc)
+
+--
+
+<br />
+<br />
+<h2 style="font-size: 60px">
+	Request and Analysis Phase<br />
+	需求與分析階段
 </h2>
 
 --
 
-# 系統 / 工具
+# [OPass](https://opass.app/)
 
 --
 
-- Mailing list
-	- Google Groups
-- IRC
-	- ChatZilla / irssi / webchat
-- Issue tracking system
-	- GitHub
-- Wiki
-- Continuous integration service
-	- Travis CI
+<h1 style="font-size: 70px">
+	Issue Tracking System
+</h1>
+
+--
+
+# [GitHub Projects](https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects)
+## [Hudi Issue Support](https://github.com/orgs/apache/projects/40)
+
+--
+
+# [GitLab Issue Board](https://docs.gitlab.com/ee/user/project/issue_board.html)
+## [GNOME shell](https://gitlab.gnome.org/GNOME/gnome-shell/-/boards) / [SITCON Camp 2023](https://gitlab.com/sitcon-tw/camp-2023/sitcon-camp-2023-board/-/boards)
+
+--
+
+# [錯誤示範](https://github.com/nwjs/nw.js/issues/293)
+
+--
+
+<br />
+<br />
+<h2 style="font-size: 60px">
+	Design Phase<br />
+	設計階段
+</h2>
+
+--
+
+# Wiki
+## [GNOME Project](https://wiki.gnome.org/) / [nw.js](https://github.com/nwjs/nw.js/wiki)
+
+--
+
+<br />
+<br />
+<h2 style="font-size: 60px">
+	Coding Phase<br />
+	撰寫階段
+</h2>
 
 --
 
@@ -141,208 +161,6 @@ output: index.html
 
 --
 
-# 溝通工具
-
---
-
-# Mailing list
-
---
-
-<br />
-<h2 style="font-size: 80px">
-	<a href="https://groups.google.com" target="_blank">Google Groups</a><br />
-</h2>
-<br />
-<div align="center">
-	<a href="https://groups.google.com/forum/#!forum/sitcon-general" target="_blank">SITCON：日常</a><br />
-	<a href="mailto:sitcon-general@googlegroups.com">sitcon-general@googlegroups.com</a>
-</div>
-
---
-
-### 關於 Mail 的大小事
-
-* 封存
-* CC / BCC
-* 引用
-* 打招呼 **告訴別人你是誰** 結尾署名
-* 設定 回覆所有人
-* Lab 取消傳送
-* 篩選器 / 標籤
-
---
-
-# IRC
-
-## #SITCON@freenode
-
---
-
-### IRC Client
-
-* [Irssi](http://www.irssi.org/)
-
-* [ChatZilla](https://addons.mozilla.org/zh-TW/firefox/addon/chatzilla/)
-
-* [Web](http://webchat.freenode.net/?channels=sitcon)
-
---
-
-* [Registering your nick on freenode](http://freenode.net/faq.shtml#nicksetup)
-
-* [Registering a channel on freenode](http://blog.freenode.net/2008/04/registering-a-channel-on-freenode/)
-
---
-
-<br />
-<br />
-<h2 style="font-size: 60px">
-	Request and Analysis Phase<br />
-	需求與分析階段
-</h2>
-
---
-
-* 由於專案的人員身處各地，非同步化的討論是否會花費過多的時間？你的看法是甚麼？
-
---
-
-* 參與專案的使用者若無具備軟體工程的基本概念，是否會導致溝通不良呢？你的看法是甚麼？
-
---
-
-* 以傳統軟體工程的觀點，分析使用者的工作流程、習慣，整理成圖表，才能逐一地找出使用者的需求。<br />
-所以，像 OSS 這樣無嚴謹化的需求分析真的能找出使用者的需求嗎？你的看法是甚麼？
-
-* https://github.com/MongoEngine/mongoengine/issues/858
-
---
-
-<h1 style="font-size: 70px">
-	Issue tracking system
-</h1>
-
---
-
-* [GitHub](https://github.com/)
-
-* [GitLab](http://gitlab.org/)
-
-* [Gogs](https://gogs.io/)
-
-* [Redmine](http://redmine.org)
-
-* [Phabricator](http://phabricator.org/)
-
---
-
-### SITCON
-
-<div align="center">
-	<img src="./img/its_sitcon.png" width="800"/>
-</div>
-
---
-
-### Redmine
-<div align="center">
-	<img src="./img/its_redmine_list.png" width="800"/>
-</div>
-
---
-
-### Redmine
-<div align="center">
-	<img src="./img/its_redmine_cal.png" width="800"/>
-</div>
-
---
-
-### Redmine
-<div align="center">
-	<img src="./img/its_redmine_gantt.png" width="800"/>
-</div>
-
---
-
-### GitLab
-<div align="center">
-	<img src="./img/gitlab.png" width="800"/>
-</div>
-
---
-
-### GitLab
-<div align="center">
-	<img src="./img/gitlab_code_comment.png" width="800"/>
-</div>
-
---
-
-### Phabricator
-<div align="center">
-	<img src="./img/phabricator.png" width="800"/>
-</div>
-
---
-
-<h1>
-	<a href="https://github.com/denny0223/TOSW-test/issues" target="_blank">Demo</a>
-</h1>
-<h2>
-	sample: <a href="https://github.com/nwjs/nw.js/issues" target="_blank">nw.js</a>
-</h2>
-
---
-
-<br />
-<br />
-<h2 style="font-size: 60px">
-	Design Phase<br />
-	設計階段
-</h2>
-
---
-
-* 軟體的設計上是相當複雜的，所以採用簡單的架構，是否足夠？細部設計是由開發者自行設計或者仍需要溝通？如何溝通？
-
---
-
-* 所設計的軟體架構的文件，能否充分表達設計概念？是否需要技術文件的附註？
-
---
-
-# Wiki
-## [Demo](https://github.com/denny0223/TOSW-test/wiki) / sample: [node-webkit](https://github.com/nwjs/nw.js/wiki)
-
---
-
-* 軟體的環境會隨著技術的發展而變化，所以開發者如何因應？可否提出你的看法？
-
---
-
-<br />
-<br />
-<h2 style="font-size: 60px">
-	Coding Phase<br />
-	撰寫階段
-</h2>
-
---
-
-* 傳統的程式開發會採用自上而下、自下而上等整合方法。在你的專案中是否會採用到上述的方法？可否提出你的看法？
-
---
-
-* 要 reuse 別人的程式碼到自己的專案中，這當中難道不會碰到結構上的問題嗎？如何處理？大部分 reuse 的程式碼需要修改嗎？還是只有部分的 reuse 的程式碼需要修改？
-
---
-
-* OSS 的開發者進行開發時，對於所使用的開發工具或環境熟練嗎？若從未接觸過，他們是如何上手的呢？
-
---
-
 <br />
 <br />
 <h2 style="font-size: 60px">
@@ -352,64 +170,27 @@ output: index.html
 
 --
 
-* 專案中，是否有使用同僚覆核（peer review）的方式互相檢視專案人員的程式內容？
-
---
-
-* 有人使用同僚覆核，需不需要其他動態的測試方法？若有，如何進行？沒有，又如何彌補這部分之不足？
-
---
-
-# Testing
-<h2>
-<a href="https://github.com/denny0223/TOSW-test" target="_blank">Demo repo</a>
-</h2>
+### Testing
+- [Golang testing package](https://pkg.go.dev/testing)
+- [Python unittest](https://docs.python.org/3/library/unittest.html)
+- [Node.js Test runner](https://nodejs.org/api/test.html)
 
 --
 
 <br />
 <h2 style="font-size: 75px">
-	Continuous integration
-</h2>
-<div align="right">
-	<a href="http://www.dotblogs.com.tw/hatelove/archive/2011/12/25/introducing-continuous-integration.aspx" target="_blank">ref</a>
-</div>
-<h2>
-<a href="https://travis-ci.org/" target="_blank">Travis</a> / <a href="http://jenkins-ci.org/" target="_blank">Jenkins</a>
+	Continuous Integration / Continuous Delivery
 </h2>
 
 --
 
-<br />
-<br />
-<h2 style="font-size: 75px">
-	Travis
-</h2>
-<h2>
-	<a href="https://github.com/denny0223/TOSW-test/blob/master/.travis.yml" target="_blank">.travis.yml</a> /
-	<a href="https://travis-ci.org/denny0223/TOSW-test" target="_blank">result</a>
-</h2>
+# [GitHub Actions](https://github.com/features/actions)
+## [SITCON 2022](https://github.com/sitcon-tw/2022/actions)
 
 --
 
-### Jenkins
-<div align="center">
-	<img src="./img/jenkins.png" width="800"/>
-</div>
-
---
-
-<div align="center">
-  <img style="width:800px" src="./img/ci.png" />
-</div>
-
---
-
-* OSS 開發者是否會將軟體所出現錯誤進行分類？
-
---
-
-* OSS 專案在發展模式和經濟的因素下，不會擁有專門進行軟體測試的 QA 團隊。所以只會有幾個 committer 或甚至是一個管理者，這樣的方式會不會較不嚴謹，錯誤率會不會偏高？
+# [GitLab CI](https://docs.gitlab.com/ee/ci/)
+## [gnome-shell](https://gitlab.gnome.org/GNOME/gnome-shell/-/pipelines)
 
 --
 
@@ -422,23 +203,8 @@ output: index.html
 
 --
 
-* 由於 OSS 軟體的版本釋出的時間相較於商業軟體是較短的，所以在這麼短的軟體發展生命週期裡，如何維護軟體的品質？是否較為困難？
-
---
-
-* 開發者和使用者對於專案所發展的軟體，若沒有較宏觀的軟體架構的話，往後在系統整合或維護上是否相對困難？
-
---
-
-* 由於非嚴謹的溝通和非標準的流程，是否會造成花費過多的時間？
-
---
-
-<br />
-<br />
-<h2 style="font-size: 65px">
-	動手練習實際付諸行動吧！
-</h2>
+# Example: AOSP
+## [Report Bugs](https://source.android.com/docs/setup/contribute/report-bugs)
 
 --
 
