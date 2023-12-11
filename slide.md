@@ -9,7 +9,7 @@ output: index.html
 <br />
 
 ## Denny Huang
-## 2023/09/06
+## 2023/12/11
 
 --
 
@@ -68,6 +68,10 @@ output: index.html
 
 # [大教堂和市集](https://zh.wikipedia.org/wiki/%E5%A4%A7%E6%95%99%E5%A0%82%E5%92%8C%E5%B8%82%E9%9B%86)
 ## [維護一個大型開源項目是怎樣的體驗？](https://www.zhihu.com/question/36292298/answer/160028010)
+
+--
+
+# Release early, release often.
 
 --
 
@@ -151,6 +155,7 @@ output: index.html
 --
 
 # Git
+## [Git 教學](https://www.youtube.com/watch?v=eznLhINAvQI) / [協作不想吵架？快用版本控制系統](https://www.youtube.com/watch?v=-mcjQxoyaEI)
 
 --
 
@@ -158,6 +163,14 @@ output: index.html
 	<img src="./img/git_branching_model.png" width="380"/>
 	<a href="http://nvie.com/posts/a-successful-git-branching-model/" target="_blank">src</a>
 </div>
+
+--
+
+# Talk is cheap. Show me the code.
+
+--
+
+# Pull Request / Merge Request
 
 --
 
