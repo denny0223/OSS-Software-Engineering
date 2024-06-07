@@ -38,6 +38,17 @@ output: index.html
 
 --
 
+<div align="center">
+<iframe width="780" height="500" src="https://www.youtube.com/embed/6NhyCXJU-IQ" frameborder="0" allowfullscreen></iframe>
+</div>
+<div align="right">
+  <font size="3">
+     By Bit Blueprint / Jimmy Huang
+  </font>
+</div>
+
+--
+
 # 軟體工程？
 
 --
@@ -229,6 +240,10 @@ output: index.html
 
 ### 補充資料
 - [SITCON 社群指南](https://rschiang.gitbooks.io/sitcon-guide/)
+
+- [授權條款](https://ossf.denny.one/tw/basic-concepts.html)
+
+- [開源社群推廣目錄](https://hackmd.io/@SITCON/floss-community-list)
 
 --
 
