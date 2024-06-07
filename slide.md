@@ -227,6 +227,11 @@ output: index.html
 
 --
 
+### 補充資料
+- [SITCON 社群指南](https://rschiang.gitbooks.io/sitcon-guide/)
+
+--
+
 <h1 style="font-size:72px">Thanks for listening</h1>
 
 <br />
