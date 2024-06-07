@@ -136,7 +136,7 @@ output: index.html
 --
 
 # [GitLab Issue Board](https://docs.gitlab.com/ee/user/project/issue_board.html)
-## [GNOME shell](https://gitlab.gnome.org/GNOME/gnome-shell/-/boards) / [SITCON Camp 2023](https://gitlab.com/sitcon-tw/camp-2023/sitcon-camp-2023-board/-/boards)
+## [GNOME shell](https://gitlab.gnome.org/GNOME/gnome-shell/-/boards) / [SITCON Camp 2024](https://gitlab.com/sitcon-tw/camp-2024/board/-/boards)
 
 --
 
