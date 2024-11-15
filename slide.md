@@ -1,15 +1,14 @@
-title: 開放原始碼專案的軟體工程實踐
+title: 開源文化與專案管理
 output: index.html
 --
 
 <h1 style="font-size: 72px">
-  開放原始碼專案的<br />
-  軟體工程實踐
+  開源文化與專案管理<br />
 </h1>
 <br />
 
 ## Denny Huang
-## 2023/12/11
+## 2024/06/08
 
 --
 
