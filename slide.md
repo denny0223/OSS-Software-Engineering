@@ -238,7 +238,7 @@ output: index.html
 --
 
 ### 補充資料
-- [SITCON 社群指南](https://rschiang.gitbooks.io/sitcon-guide/)
+- [SITCON 社群指南](https://sitcon.org/community-guide/)
 
 - [授權條款](https://ossf.denny.one/tw/basic-concepts.html)
 
